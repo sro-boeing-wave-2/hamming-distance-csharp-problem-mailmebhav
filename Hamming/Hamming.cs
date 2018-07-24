@@ -7,13 +7,16 @@ namespace Hamming
         public static int Distance(string original, string current)
         {
             int hammingDistance = 0;
-            if (original == null)
+            if (original == null || current == null)
             {
+                if(original == null)
+                {
                 throw new ArgumentNullException("original");
-            }
-            else if(current == null)
-            {
+                }
+                else
+                {
                 throw new ArgumentNullException("current");
+                }
             }
             else if(original.Length != current.Length)
             {
